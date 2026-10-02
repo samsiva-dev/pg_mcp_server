@@ -4,3 +4,4 @@ bin/
 lib/
 *.sh
 *.cfg
+.DS_Store

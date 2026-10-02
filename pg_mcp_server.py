@@ -15,6 +15,7 @@ import subprocess
 
 import psycopg2
 import requests
+import sys
 from mcp.server.fastmcp import FastMCP
 
 # ── Config ─────────────────────────────────────────────────────────────────
@@ -216,9 +217,9 @@ def search_symbol(symbol: str, search_type: str = "callers") -> str:
 # ── Entry point ────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    print("Starting pg-source-explorer MCP server...")
-    print(f"  Chat model : {CHAT_MODEL}")
-    print(f"  Embed model: {EMB_MODEL}")
-    print(f"  PG conn    : {PG_CONN}")
-    print(f"  PG src     : {PG_SRC}")
+    print("Starting pg-source-explorer MCP server...", file=sys.stderr)
+    print(f"  Chat model : {CHAT_MODEL}", file=sys.stderr)
+    print(f"  Embed model: {EMB_MODEL}", file=sys.stderr)
+    print(f"  PG conn    : {PG_CONN}", file=sys.stderr)
+    print(f"  PG src     : {PG_SRC}", file=sys.stderr)
     mcp.run(transport="stdio")
